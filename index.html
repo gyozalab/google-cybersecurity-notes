@@ -2,7 +2,7 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>站台已搬家 — 煎餃的線上課程筆記</title>
+  <title>站台已搬家 - gyoza-course-notes</title>
   <meta http-equiv="refresh" content="3;url=https://gyozalab.github.io/gyoza-course-notes/cybersecurity/MOC">
   <link rel="canonical" href="https://gyozalab.github.io/gyoza-course-notes/cybersecurity/MOC">
   <style>
@@ -29,32 +29,35 @@
   </style>
 </head>
 <body>
-  <h1>站台已搬家 🚚</h1>
-  <p class="lead">這個網址原本是「煎餃的 Google Cybersecurity 學習筆記」。為了容納更多課程，整個站台已升級為<strong>多學程版</strong>：</p>
+  <h1>站台已搬家</h1>
+  <p class="lead">你目前開的是舊網址 <code>google-cybersecurity-notes</code>。這個站台已經升級並改名為 <strong>gyoza-course-notes</strong>，現在是煎餃的多學程筆記站。</p>
 
   <div class="new-url">
-    <strong>新網址：</strong><br>
+    <strong>新網址</strong><br>
     <a id="target-link" href="https://gyozalab.github.io/gyoza-course-notes/">https://gyozalab.github.io/gyoza-course-notes/</a>
   </div>
 
-  <p class="countdown" id="countdown">3 秒後自動跳轉…</p>
+  <p class="countdown" id="countdown">3 秒後自動跳轉...</p>
 
-  <p>沒跳轉？<a id="manual-link" href="https://gyozalab.github.io/gyoza-course-notes/">點這裡手動前往新站</a>。</p>
+  <p>如果沒有自動跳轉，<a id="manual-link" href="https://gyozalab.github.io/gyoza-course-notes/">點這裡手動前往新站</a>。</p>
 
   <hr style="margin-top: 40px; border: none; border-top: 1px solid #e5e5e5;">
-  <p style="font-size: 13px; color: #b8b8b8;">— 煎餃 ｜ <a href="https://gyozalab.com/">gyozalab.com</a></p>
+  <p style="font-size: 13px; color: #b8b8b8;">gyozalab - <a href="https://gyozalab.com/">gyozalab.com</a></p>
 
   <script>
     (function () {
       var newBase = 'https://gyozalab.github.io/gyoza-course-notes/';
       var path = window.location.pathname || '/';
-      // 移除 stub repo 的 base path /google-cybersecurity-notes/
+      // Remove the legacy stub repo base path.
       path = path.replace(/^\/google-cybersecurity-notes\/?/, '');
-      // 舊站結構：/CN_xxx/CNWN_xxx → 新站：/cybersecurity/CN_xxx/CNWN_xxx
+      // Normalize old Quartz-style .html suffixes.
+      path = path.replace(/\.html$/, '');
+
+      // Old cybersecurity paths now live under /cybersecurity/.
       var target;
       if (path === '' || path === '/') {
         target = newBase + 'cybersecurity/MOC';
-      } else if (/^C\d_/.test(path) || path === 'MOC' || path === 'MOC.html') {
+      } else if (/^C\d_/.test(path) || path === 'MOC') {
         target = newBase + 'cybersecurity/' + path;
       } else {
         target = newBase + path;
@@ -66,13 +69,12 @@
       document.getElementById('target-link').textContent = finalUrl;
       document.getElementById('manual-link').href = finalUrl;
 
-      // 倒數計時
       var seconds = 3;
       var counter = document.getElementById('countdown');
       var timer = setInterval(function () {
         seconds--;
         if (seconds > 0) {
-          counter.textContent = seconds + ' 秒後自動跳轉…';
+          counter.textContent = seconds + ' 秒後自動跳轉...';
         } else {
           clearInterval(timer);
           window.location.replace(finalUrl);

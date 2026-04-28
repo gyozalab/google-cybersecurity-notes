@@ -2,7 +2,8 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>站台已搬家 — 煎餃的線上課程筆記</title>
+  <title>站台已搬家 - gyoza-course-notes</title>
+  <link rel="canonical" href="https://gyozalab.github.io/gyoza-course-notes/cybersecurity/MOC">
   <meta http-equiv="refresh" content="3;url=https://gyozalab.github.io/gyoza-course-notes/">
   <style>
     body {
@@ -28,27 +29,27 @@
   </style>
 </head>
 <body>
-  <h1>站台已搬家 🚚</h1>
-  <p class="lead">原本的「煎餃的 Google Cybersecurity 學習筆記」已升級為多學程版本。我會幫你把這個舊網址轉到新站對應的位置。</p>
+  <h1>站台已搬家</h1>
+  <p class="lead">這是舊版 <code>google-cybersecurity-notes</code> 站台的連結。現在的正式站名是 <strong>gyoza-course-notes</strong>，我會把你轉到新版站台的對應位置。</p>
 
   <div class="new-url">
-    <strong>新網址：</strong><br>
+    <strong>新網址</strong><br>
     <a id="target-link" href="https://gyozalab.github.io/gyoza-course-notes/">https://gyozalab.github.io/gyoza-course-notes/</a>
   </div>
 
-  <p class="countdown" id="countdown">3 秒後自動跳轉…</p>
+  <p class="countdown" id="countdown">3 秒後自動跳轉...</p>
 
-  <p>沒跳轉？<a id="manual-link" href="https://gyozalab.github.io/gyoza-course-notes/">點這裡手動前往新站</a>。</p>
+  <p>如果沒有自動跳轉，<a id="manual-link" href="https://gyozalab.github.io/gyoza-course-notes/">點這裡手動前往新站</a>。</p>
 
   <hr style="margin-top: 40px; border: none; border-top: 1px solid #e5e5e5;">
-  <p style="font-size: 13px; color: #b8b8b8;">— 煎餃 ｜ <a href="https://gyozalab.com/">gyozalab.com</a></p>
+  <p style="font-size: 13px; color: #b8b8b8;">gyozalab - <a href="https://gyozalab.com/">gyozalab.com</a></p>
 
   <script>
     (function () {
       var newBase = 'https://gyozalab.github.io/gyoza-course-notes/';
       var path = window.location.pathname || '/';
       path = path.replace(/^\/google-cybersecurity-notes\/?/, '');
-      // 移除 .html 後綴（Quartz 預設無副檔名）
+      // Normalize old Quartz-style .html suffixes.
       path = path.replace(/\.html$/, '');
       var target;
       if (path === '' || path === '/') {
@@ -70,7 +71,7 @@
       var timer = setInterval(function () {
         seconds--;
         if (seconds > 0) {
-          counter.textContent = seconds + ' 秒後自動跳轉…';
+          counter.textContent = seconds + ' 秒後自動跳轉...';
         } else {
           clearInterval(timer);
           window.location.replace(finalUrl);
