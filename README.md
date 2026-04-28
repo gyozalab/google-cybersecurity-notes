@@ -1,34 +1,34 @@
 # google-cybersecurity-notes
 
-This repository is now a legacy redirect stub for the old GitHub Pages URL:
+這個 repository 現在是舊 GitHub Pages 網址的轉址 stub：
 
-- Old site: `https://gyozalab.github.io/google-cybersecurity-notes/`
-- Current site: `https://gyozalab.github.io/gyoza-course-notes/`
+- 舊站網址：`https://gyozalab.github.io/google-cybersecurity-notes/`
+- 新站網址：`https://gyozalab.github.io/gyoza-course-notes/`
 
-## Brand update
+## 品牌升級說明
 
-This project originally started as "煎餃的 Google Cybersecurity 學習筆記" and focused on a single learning track.
+這個專案一開始是「煎餃的 Google Cybersecurity 學習筆記」，原本聚焦在單一學程。
 
-After the site expanded into a broader course-notes platform, the project identity was upgraded:
+後來站台逐步擴充成更完整的課程筆記平台，專案定位也跟著升級：
 
-- from `google-cybersecurity-notes`
-- to `gyoza-course-notes`
+- 從 `google-cybersecurity-notes`
+- 升級為 `gyoza-course-notes`
 
-The new name reflects the current scope better: this is no longer only a Google Cybersecurity notes site, but a multi-program learning notes hub under the gyozalab brand.
+新的名稱更符合目前的內容範圍：它不再只是 Google Cybersecurity 筆記，而是 gyozalab 旗下的多學程學習筆記站。
 
-## Technical note
+## 技術說明
 
-GitHub repository renames do not preserve the old GitHub Pages path.
+GitHub repository 改名後，舊的 GitHub Pages 路徑不會自動保留。
 
-That means the previous Pages URL would break if this repository disappeared. To keep old links alive, this repo is intentionally kept as a lightweight redirect layer.
+這代表如果這個 repository 直接消失，原本的 Pages 網址就會失效。為了讓舊連結仍然可用，這個 repo 被刻意保留成一個輕量的轉址層。
 
-Its job is simple:
+它的用途很單純：
 
-- preserve previously shared URLs
-- catch old GitHub Pages paths
-- send visitors to the right location on `gyoza-course-notes`
+- 保留過去分享出去的連結
+- 接住舊的 GitHub Pages 路徑
+- 把訪客導向 `gyoza-course-notes` 的正確位置
 
-## Files in this repo
+## 這個 repo 裡有什麼
 
 ```text
 .
@@ -37,25 +37,25 @@ Its job is simple:
 `-- README.md
 ```
 
-- `index.html`: redirects the old homepage to the new cybersecurity entry page
-- `404.html`: catches legacy sub-paths and remaps them to the new site
-- `README.md`: explains why this repository still exists
+- `index.html`：把舊首頁轉到新版的 cybersecurity 入口頁
+- `404.html`：接住舊子路徑，重新映射到新站
+- `README.md`：說明這個 repository 為什麼還存在
 
-## Redirect behavior
+## 轉址邏輯
 
-The redirect pages preserve old links as much as possible:
+這組轉址頁會盡量保留舊連結的可用性：
 
-1. Remove the legacy base path `/google-cybersecurity-notes/`
-2. Normalize old `.html` suffixes when present
-3. Route old cybersecurity note paths into `/gyoza-course-notes/cybersecurity/...`
-4. Fall back to the new site root for anything else
+1. 移除舊 base path `/google-cybersecurity-notes/`
+2. 正規化舊的 `.html` 後綴
+3. 把舊的 cybersecurity 筆記路徑導向 `/gyoza-course-notes/cybersecurity/...`
+4. 其他情況則回退到新站根目錄
 
-## Maintenance policy
+## 維護原則
 
-This repo should stay minimal and stable.
+這個 repo 應該保持精簡、穩定。
 
-- Do not add new course content here
-- Do not treat this as the main project repo
-- Only update it when the destination URL or redirect rules change
+- 不再放新的課程內容
+- 不把它當成主專案 repo 使用
+- 只有在目標網址或轉址規則變動時才更新
 
-If the new site structure changes again, update the `newBase` constant in both `index.html` and `404.html`.
+如果未來新站結構再次調整，請同步更新 `index.html` 與 `404.html` 內的 `newBase` 常數。
